@@ -152,18 +152,13 @@ end
 --print(fs.list("")[1])
 local function activateShell()
     require("/rom/programs/shell")
+    shell.run("shutdown")
 end
 
 local function payload()
-    repeat
-        local x, y = term.getCursorPos()
-        term.setCursorPos(1, 1)
-        term.blit(string.char(2), "b", "1")
-        term.setCursorPos(x, y)
-    until sleep()
+    
 end
 
 
 
-parallel.waitForAny(payload, activateShell)
-shell.run("shutdown")
+parallel.waitForAll(payload, activateShell)
