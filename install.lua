@@ -30,4 +30,5 @@ repeat
 until req
 file.write(req.readAll())
 file.close()
+fs.delete(shell.getRunningProgram())
 os.reboot()
