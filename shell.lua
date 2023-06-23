@@ -12,8 +12,8 @@
 
 local make_package = dofile("rom/modules/main/cc/require.lua").make
 
-local multishell = multishell
-local parentShell = shell
+local multishell-- = multishell
+local parentShell-- = shell
 local parentTerm = term.current()
 
 if multishell then
